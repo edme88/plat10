@@ -1,0 +1,21 @@
+{
+  "json": {
+    "enabled": true,
+    "output": "reports/log.json",
+    "formatter": "cucumber-json-formatter.exe"
+  },
+  "messages": {
+    "enabled": true,
+    "output": "reports/messages.ndjson"
+  },
+  "html": {
+    "enabled": true,
+    "output": "reports/cucumber-report.html"
+  },
+  "stepDefinitions": [
+    "[filepath]/**/*.{js,ts}",
+    "[filepath].{js,ts}",
+    "cypress/e2e/step_definitions/*.{js,ts}"
+  ],
+  "cucumberautocomplete.steps": ["cypress/e2e/*/*.js"]
+}

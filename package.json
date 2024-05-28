@@ -1,0 +1,20 @@
+{
+  "name": "cypress-plat10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tes"
+  },
+  "keywords": [
+    "cypress",
+    "prueba"
+  ],
+  "author": "agus",
+  "license": "ISC",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.5",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^13.10.0"
+  }
+}
