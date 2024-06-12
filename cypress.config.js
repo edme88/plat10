@@ -6,13 +6,19 @@ const createEsbuildPlugin =
   require("@badeball/cypress-cucumber-preprocessor/esbuild").createEsbuildPlugin;
 
 module.exports = defineConfig({
-  env: {
-    DEV_URL: "my.url",
-    users: {},
-  },
   e2e: {
     specPattern: "cypress/e2e/features/**/*.feature",
     async setupNodeEvents(on, config) {
+      on("before:browser:launch", (browser = {}, launchOptions) => {
+        console.log(launchOptions.args);
+
+        if (browser.name === "chrome") {
+          launchOptions.args.push("--disable-gpu");
+        }
+
+        return launchOptions;
+      });
+
       const bundler = createBundler({
         plugins: [createEsbuildPlugin(config)],
       });
@@ -22,6 +28,12 @@ module.exports = defineConfig({
 
       return config;
     },
-    watchForFileChanges: true,
+    downloadsFolder: "cypress/downloads",
+    hideXHRInCommandLog: false,
+    trashAssetsBeforeRuns: true,
+    chromeWebSecurity: false,
+    defaultCommandTimeout: 8000,
+    defaultpageLoadTimeout: 8000,
+    testIsolation: true,
   },
 });
