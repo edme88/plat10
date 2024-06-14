@@ -1,6 +1,5 @@
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When } from "@badeball/cypress-cucumber-preprocessor";
 const home = require("../../pages/home");
-const search = require("../../pages/search");
 
 Given(`un usuario esta en la pagina de plataforma10`, () => {
   cy.viewport("macbook-16");
@@ -30,21 +29,15 @@ When(`selecciona fecha de {string} el dia {string}`, (sitio, date) => {
   } else {
     date = date.replace("+", "").replace("dias", "");
     day = dayNum + Number(date);
+
+    /*if(day){
+      day = day -30;
+      mes++;
+    }*/
   }
   home.getDaySquare().contains(day).click();
 });
 
 When(`hace click en el boton {string}`, (btnTxt) => {
   cy.get("button").contains(btnTxt).click();
-});
-
-Then(`se visualiza la imagen de Buscando Pasajes`, () => {
-  cy.get("h1").should("have.text", "Buscando pasajes");
-  search.getMainAnimation().should("be.visible");
-});
-
-Then(`posteriormente se visualizan los pasajes`, () => {
-  search.getTickets().each((ticket) => {
-    cy.wrap(ticket).should("be.visible");
-  });
 });

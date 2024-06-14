@@ -9,3 +9,8 @@ Feature: Buscar colectivos
         And hace click en el boton "Buscar Pasajes"
         Then se visualiza la imagen de Buscando Pasajes
         And posteriormente se visualizan los pasajes
+        When el usuario presiona seleccionar del pasaje "1"
+        And selecciona la butaca disponible
+        And completa los siguientes datos
+            | nombre   | apellido  | nacionalidad | TipoDoc | doc      | nacimiento | sexo     |
+            | Agustina | Aliciardi | Argentina    | DNI     | 34022568 | 24/08/1990 | Femenino |

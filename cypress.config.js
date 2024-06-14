@@ -29,7 +29,7 @@ module.exports = defineConfig({
       return config;
     },
     downloadsFolder: "cypress/downloads",
-    hideXHRInCommandLog: false,
+    hideXHRInCommandLog: true,
     trashAssetsBeforeRuns: true,
     chromeWebSecurity: false,
     defaultCommandTimeout: 8000,
