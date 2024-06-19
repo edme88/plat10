@@ -12,5 +12,12 @@ Feature: Buscar colectivos
         When el usuario presiona seleccionar del pasaje "1"
         And selecciona la butaca disponible
         And completa los siguientes datos
-            | nombre   | apellido  | nacionalidad | TipoDoc | doc      | nacimiento | sexo     |
-            | Agustina | Aliciardi | Argentina    | DNI     | 34022568 | 24/08/1990 | Femenino |
+            | nombre | apellido | nacionalidad | TipoDoc | doc      | nacimiento | sexo     |
+            | Agus   | Alici    | Argentina    | DNI     | 34022568 | 24/08/1990 | Femenino |
+        And hace click en el link "Confirmar y comprar"
+        And selecciona una tarjeta "VISA DEBITO"
+        And completa los datos del formulario de contacto
+            | email           | nacionalidad | tipo | documento | nombre | apellido | cod. area | telefono |
+            | email@email.com | Argentina    | DNI  | 34004855  | Agus   | Alici    | 351       | 3892222  |
+
+

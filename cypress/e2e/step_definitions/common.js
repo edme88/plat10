@@ -41,3 +41,7 @@ When(`selecciona fecha de {string} el dia {string}`, (sitio, date) => {
 When(`hace click en el boton {string}`, (btnTxt) => {
   cy.get("button").contains(btnTxt).click();
 });
+
+When(`hace click en el link {string}`, (linkTxt) => {
+  cy.get("link").contains(linkTxt).click();
+});

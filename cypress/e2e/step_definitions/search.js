@@ -25,14 +25,6 @@ When(`selecciona la butaca disponible`, () => {
 
 When(`completa los siguientes datos`, (table) => {
   table = table.rows()[0];
-  cy.log(JSON.stringify(table));
-  cy.log(table[0]);
-  cy.log(table[1]);
-  cy.log(table[2]);
-  cy.log(table[3]);
-  cy.log(table[4]);
-  cy.log(table[5]);
-  cy.log(table[6]);
 
   search.getPasajeName().type(table[0]);
   search.getPasajeLastName().type(table[1]);
